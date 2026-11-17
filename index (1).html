@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>마음이음 · 가족 대화방</title>
+<style>
+:root{--ink:#293d36;--green:#32654f;--pale:#edf4ed;--line:#dce5dc}*{box-sizing:border-box}body{margin:0;background:#f5f5ef;color:var(--ink);font-family:system-ui,'Apple SD Gothic Neo','Nanum Gothic',sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #bf7928;outline-offset:3px}[hidden]{display:none!important}.wrap{max-width:650px;margin:auto;padding:24px 18px;min-height:100dvh;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px}.mark{width:44px;height:44px;border-radius:16px;background:var(--green);color:white;display:grid;place-items:center;font-size:26px}.tag{margin-left:auto;font-size:12px;color:#52645b;background:#e7ece4;padding:6px 9px;border-radius:20px}.intro{margin:auto 0;padding:45px 8px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:700;color:var(--green)}h1{font-size:clamp(30px,7vw,42px);line-height:1.35;letter-spacing:-1.5px;margin:16px 0}p{line-height:1.8;color:#52645b}.card{padding:25px;border:1px solid var(--line);border-radius:24px;background:white;box-shadow:0 12px 40px #243c3008}label{display:block;font-size:14px;font-weight:700;margin-bottom:9px}input,select{width:100%;border:1px solid #bccdbf;background:white;padding:14px;border-radius:12px;color:var(--ink)}.primary{border:0;border-radius:12px;background:var(--green);color:white;font-weight:700;padding:15px 20px}.full{width:100%;margin-top:12px}.fine{font-size:12px;line-height:1.7;color:#52645b}.hint{font-size:13px;color:#52645b;line-height:1.7}.splash{position:fixed;inset:0;z-index:10;background:#edf4ed;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}.splash .mark{width:88px;height:88px;font-size:49px;border-radius:30px}.splash strong{font-size:30px;letter-spacing:-1px}.splash button{background:none;border:0;color:var(--green);text-decoration:underline;margin-top:18px;padding:12px}.room{display:flex;flex-direction:column;flex:1;min-height:0;margin-top:24px;gap:14px}.roomhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.roomhead h1{font-size:23px;margin:0}.quiet{background:white;border:1px solid var(--line);border-radius:10px;padding:10px;color:var(--ink)}.prompt{background:#e6eee3;padding:16px 19px;border-radius:16px;font-size:14px;line-height:1.7}.messages{min-height:240px;max-height:45dvh;overflow:auto;display:flex;flex-direction:column;gap:15px;padding:10px 2px;flex:1}.empty{text-align:center;margin:auto;padding:30px 15px;font-size:14px;color:#52645b}.message{max-width:86%;align-self:flex-end}.message.other{align-self:flex-start}.who{display:block;font-size:12px;margin:0 5px 5px;color:#52645b}.bubble{padding:13px 16px;background:#32654f;color:white;border-radius:18px 18px 4px 18px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}.other .bubble{background:white;color:var(--ink);border:1px solid var(--line);border-radius:18px 18px 18px 4px}.compose{display:flex;gap:8px;margin-top:10px}.compose input{min-width:0}.compose button{flex-shrink:0}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar button{font-size:13px}.speaker{display:flex;align-items:center;gap:10px;font-size:13px}.speaker label{margin:0;white-space:nowrap}.speaker select{padding:9px;font-size:13px}.status{min-height:24px;font-size:13px;color:var(--green);line-height:1.7}footer{font-size:12px;color:#52645b;line-height:1.8;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}@media(prefers-reduced-motion:no-preference){.splash .mark{animation:appear .65s ease-out}@keyframes appear{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}}
+</style>
+</head>
+<body>
+<div id="splash" class="splash" aria-label="마음이음 시작 화면"><div class="mark" aria-hidden="true">♥</div><strong>마음이음</strong><span>서로의 마음에 한 걸음 더</span><button id="skip" type="button">바로 시작하기</button></div>
+<main class="wrap">
+<header class="brand"><span class="mark" aria-hidden="true">♥</span>마음이음<span class="tag">화면 시제품</span></header>
+<section id="welcome" class="intro">
+<div class="eyebrow">A LITTLE CLOSER, TOGETHER</div><h1>다시, 서로의 이야기를<br>듣는 시간.</h1><p>서운했던 마음도, 고마웠던 순간도.<br>서두르지 않고 한마디씩 나누어 보세요.</p>
+<form id="join" class="card"><label for="nickname">대화에서 사용할 이름</label><input id="nickname" maxlength="20" placeholder="예: 엄마, 아빠 또는 별명" autocomplete="off" required><button class="primary full" type="submit">대화방 들어가기 →</button><p class="fine">이름과 메시지는 현재 화면에서만 사용합니다. 새로고침하거나 나가면 사라집니다.</p></form>
+<p class="hint">대화는 두 사람 모두 원할 때 시작해요.<br>지금 이야기하기 어렵다면 잠시 쉬어도 괜찮아요.</p>
+</section>
+<section id="room" class="room" aria-label="가족 대화방" hidden>
+<div class="roomhead"><div><div class="eyebrow">OUR CONVERSATION</div><h1>우리의 대화방</h1></div><button id="leave" class="quiet" type="button">나가기</button></div>
+<div class="prompt"><strong>오늘의 첫마디</strong><br><span id="question">오늘 당신에게 고마웠던 일 한 가지를 이야기해 볼까요?</span></div>
+<div class="fine">연습용 화면입니다. 다른 기기와 연결되지 않으며, 상대방이나 AI가 자동으로 답하지 않습니다.</div>
+<div id="messages" class="messages" role="log" aria-live="polite" aria-label="대화 내용"><div id="empty" class="empty">완벽한 말이 아니어도 괜찮아요.<br>가벼운 안부부터 시작해 보세요.</div></div>
+<div class="toolbar"><button id="topic" class="quiet" type="button">다른 대화 주제</button><button id="pause" class="quiet" type="button" aria-pressed="false">잠시 쉬기</button></div>
+<div id="status" class="status" role="status"></div>
+<form id="send"><div class="speaker"><label for="speaker">시연용 말하는 사람</label><select id="speaker"><option value="me">내 이름</option><option value="other">상대방 (시연)</option></select></div><div class="compose"><input id="message" aria-label="전할 말" maxlength="1000" placeholder="나는 오늘 이런 마음이었어요…" autocomplete="off" required><button id="sendButton" class="primary" type="submit">보내기</button></div></form>
+</section>
+<footer>화해를 서두르거나 강요하지 않아요. 위협이나 폭력이 있다면 대화보다 안전을 우선하세요. 긴급한 위험은 112에 도움을 요청하세요.</footer>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);let nickname='',paused=false,topicIndex=0;
+const topics=['오늘 당신에게 고마웠던 일 한 가지를 이야기해 볼까요?','함께해서 즐거웠던 추억이 있나요?','오늘 하루는 어땠나요? 듣고 싶어요.','앞으로 함께해 보고 싶은 작은 일이 있나요?','내 마음을 이해하는 데 도움이 될 이야기가 있나요?'];
+function dismissSplash(){$('splash').hidden=true;}
+$('skip').addEventListener('click',dismissSplash);setTimeout(dismissSplash,1500);
+$('join').addEventListener('submit',e=>{e.preventDefault();nickname=$('nickname').value.trim();if(!nickname){$('nickname').setCustomValidity('사용할 이름을 입력해 주세요.');$('nickname').reportValidity();return;}$('nickname').setCustomValidity('');$('speaker').options[0].textContent=nickname;$('welcome').hidden=true;$('room').hidden=false;$('message').focus();});
+$('nickname').addEventListener('input',()=>{$('nickname').setCustomValidity('');});
+$('send').addEventListener('submit',e=>{e.preventDefault();if(paused)return;const text=$('message').value.trim();if(!text)return;$('empty').hidden=true;const other=$('speaker').value==='other',entry=document.createElement('div'),name=document.createElement('span'),bubble=document.createElement('div');entry.className='message'+(other?' other':'');name.className='who';name.textContent=other?'상대방 (시연)':nickname;bubble.className='bubble';bubble.textContent=text;entry.append(name,bubble);$('messages').append(entry);$('message').value='';$('messages').scrollTop=$('messages').scrollHeight;$('message').focus();});
+$('topic').addEventListener('click',()=>{topicIndex=(topicIndex+1)%topics.length;$('question').textContent=topics[topicIndex];});
+$('pause').addEventListener('click',()=>{paused=!paused;$('pause').textContent=paused?'대화 재개하기':'잠시 쉬기';$('pause').setAttribute('aria-pressed',String(paused));$('message').disabled=paused;$('sendButton').disabled=paused;$('status').textContent=paused?'잠시 숨을 고르세요. 실제 대화는 두 사람이 모두 원할 때 다시 시작하세요.':'';if(!paused)$('message').focus();});
+$('leave').addEventListener('click',()=>{if(confirm('나가면 현재 대화 내용이 모두 사라집니다. 나갈까요?'))location.reload();});
+</script>
+</body>
+</html>
